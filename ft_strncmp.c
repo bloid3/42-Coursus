@@ -6,10 +6,11 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 13:34:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/01 14:12:13 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:47:13 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_charcmp(char c1, char c2)
@@ -24,7 +25,7 @@ static int	ft_charcmp(char c1, char c2)
 int	strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (str1[i] && str2[i] && i < n)
 	{
@@ -34,6 +35,6 @@ int	strncmp(const char *str1, const char *str2, size_t n)
 	}
 	if (i < n)
 	{
-		return (ft_charcmp(str1[i],str2[i]));
+		return (ft_charcmp(str1[i], str2[i]));
 	}
 }

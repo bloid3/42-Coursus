@@ -6,9 +6,11 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 17:41:00 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/01 17:56:36 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:43:36 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

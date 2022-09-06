@@ -6,11 +6,13 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:21:12 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/01 17:06:18 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:42:45 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
 		return (1);
