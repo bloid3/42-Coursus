@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 12:55:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/06 14:51:48 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:50:26 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ char	*ft_strrchr(const char	*str, int c);
 char	*ft_substr(char const	*s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(char c);
-
 
 #endif

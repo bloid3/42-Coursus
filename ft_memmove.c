@@ -6,23 +6,31 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:47:34 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/06 14:51:29 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:53:50 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *str1, const void *str2, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	char	*s;
+	char	*d;
 	size_t	i;
 
+	s = (char *)src;
+	d = (char *)dst;
 	i = 0;
-	if (n == 0 || str2 == str1)
-		return (str1);
-	while (i < n)
+	if (d > s)
+		while (len-- > 0)
+			d[len] = s[len];
+	else
 	{
-		str1[i] = str2[i];
-		i++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
-	return (str1);
+	return (dst);
 }
