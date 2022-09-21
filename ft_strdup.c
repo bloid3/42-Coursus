@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:34:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/21 16:40:58 by papereir         ###   ########.fr       */
+/*   Created: 2022/09/21 17:37:52 by papereir          #+#    #+#             */
+/*   Updated: 2022/09/21 17:38:35 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-int	strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_strdup(const char	*s1)
 {
-	size_t			i;
-	unsigned char	*aux1;
-	unsigned char	*aux2;
+	char	*aux;
+	size_t	i;
 
-	aux1 = (unsigned char *) str1;
-	aux2 = (unsigned char *) str2;
 	i = 0;
-	while ((aux1[i] || aux2[i]) && (i < n))
+	aux = ft_calloc (sizeof(char) * ft_strlen(s1) + 1, 1);
+	if (aux == NULL)
+		return (NULL);
+	while (s1[i])
 	{
-		if (aux1[i] != aux2[i])
-			return (aux1[i] - aux2[i]);
+		aux[i] = s1[i];
 		i++;
 	}
-	return (0);
+	return (aux);
 }
