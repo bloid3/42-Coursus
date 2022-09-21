@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 12:55:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/21 17:43:28 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:53:18 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+char	*ft_strdup(const char	*s1);
 int		ft_atoi(const char	*str);
 void	ft_bzero(void	*s, size_t n);
 int		ft_isalnum(int c);
@@ -43,7 +44,6 @@ char	*ft_strrchr(const char	*str, int c);
 char	*ft_substr(char const	*s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(char c);
-char	*ft_strdup(const char	*s1);
 void	*ft_calloc(size_t count, size_t size);
 
 #endif
