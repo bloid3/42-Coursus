@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 12:55:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/21 18:40:53 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:04:53 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int		ft_tolower(int c);
 int		ft_toupper(char c);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strjoin(char const	*s1, char const	*s2);
+char	*ft_strtrim(char const	*s1, char const	*set);
 
 #endif
