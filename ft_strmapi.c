@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 20:20:17 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/22 18:58:46 by papereir         ###   ########.fr       */
+/*   Created: 2022/09/22 17:33:57 by papereir          #+#    #+#             */
+/*   Updated: 2022/09/22 19:10:21 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*aux;
+	char	*sptr;
+	int		index;
 
-	aux = (char *) str;
-	if (!aux)
+	sptr = NULL;
+	if (!s || !f)
 		return (NULL);
-	i = 0;
-	while (str[i])
+	if (!(sptr == (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	index = 0;
+	while (s[index])
 	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
+		sptr[index] = f(index, s[index]);
+		++index;
 	}
-	if (str[i] == (char)c)
-		return ((char *)(str + i));
-	return (NULL);
+	sptr[index] = '\0';
+	return (sptr);
 }
