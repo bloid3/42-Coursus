@@ -6,14 +6,14 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 13:34:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/21 16:40:58 by papereir         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:35:12 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t			i;
 	unsigned char	*aux1;
