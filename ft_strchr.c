@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 20:20:17 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/22 18:58:46 by papereir         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:46:10 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strchr(const char *str, int c)
 	char	*aux;
 
 	aux = (char *) str;
-	if (!aux)
-		return (NULL);
 	i = 0;
 	while (str[i])
 	{
