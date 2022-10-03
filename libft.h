@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 12:55:46 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/22 18:54:28 by papereir         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:02:57 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ char	*ft_strtrim(char const	*s1, char const	*set);
 char	**ft_split(char const	*s, char c);
 char	*ft_strmapi(char const	*s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
+void	ft_striteri(char	*s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char	*s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char	*s, int fd);
+
 
 #endif
