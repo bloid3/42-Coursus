@@ -6,57 +6,65 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:42:03 by papereir          #+#    #+#             */
-/*   Updated: 2022/10/03 17:04:54 by papereir         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:41:55 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	ft_dig(long int i)
+static int	longitud(long aux)
 {
-	int	count;
+	int		i;
 
-	count = 0;
-	if (i < 0)
+	i = 1;
+	if (aux < 0)
 	{
-		i *= -1;
-		count++;
+		aux = aux * -1;
+		i++;
 	}
-	while (i > 0)
+	while (aux > 9)
 	{
-		i /= 10;
-		count++;
+		aux /= 10;
+		i++;
 	}
-	return (count);
+	return (i);
+}
+
+static void	*mayorque(char *string, size_t n_long, int i)
+{
+	while (n_long > 0)
+	{
+		string[i] = 48 + (n_long % 10);
+		n_long /= 10;
+		i--;
+	}
+	return (string);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*str_num;
-	int			digits;
-	long int	num;
+	char		*string;
+	long		i;
+	long long	n_long;
 
-	str_num = "";
-	num = n;
-	digits = ft_dig(n);
-	if (n < 0)
+	n_long = (long long)n;
+	i = longitud(n_long);
+	string = (char *) malloc(sizeof(char) * (i + 1));
+	if (!string)
+		return (NULL);
+	string[i--] = '\0';
+	if (n_long == 0)
 	{
-		num *= -1;
-		digits++;
+		string[0] = 48;
+		return (string);
 	}
-	str_num = malloc(digits * sizeof(char) + 1);
-	if (!str_num)
-		return (0);
-	str_num[digits] = '\0';
-	while (digits--)
+	if (n_long < 0)
 	{
-		*(str_num + digits) = num % 10 + '0';
-		num = num / 10;
+		string[0] = '-';
+		n_long = n_long * -1;
 	}
-	if (num < 0)
-		*(str_num + 0) = '-';
-	return (str_num);
+	string = mayorque(string, n_long, i);
+	return (string);
 }
 /*
 int	main(void) {
