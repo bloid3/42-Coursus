@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 18:00:35 by papereir          #+#    #+#             */
-/*   Updated: 2022/09/06 14:45:19 by papereir         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:15:31 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	s;
-	int	res;
+	int		c;
+	int		sign;
+	size_t	numero;
 
-	i = 0;
-	s = 1;
-	res = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	c = 0;
+	sign = 1;
+	numero = 0;
+	while (str[c] == 32 || (str[c] >= 9 && str[c] <= 13))
+			c++;
+	if (str[c] == '-' || str[c] == '+')
 	{
-		if (str[i] == '-')
-			s = -1;
-		i++;
+		if (str[c] == '-')
+			sign *= -1;
+		c++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[c] > 47 && str[c] < 58)
 	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
+		numero = numero * 10 + (str[c] - 48);
+		c++;
 	}
-	return (res * s);
+	if (numero > 9223372036854775807 && sign == 1)
+		return (-1);
+	else if (numero > 9223372036854775807 && sign == -1)
+		return (0);
+	return (numero * sign);
 }

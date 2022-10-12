@@ -6,27 +6,33 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 12:49:26 by papereir          #+#    #+#             */
-/*   Updated: 2022/10/12 11:09:14 by papereir         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:20:24 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	size_t	srcsize;
-	size_t	destsize;
+	size_t	i;
+	size_t	j;
+	size_t	contador;
 
-	if (!dest && !src)
+	if ((!dest || !src) && dstsize == 0)
 		return (0);
-	srcsize = ft_strlen(src);
-	destsize = ft_strlen(dest);
-	if (n < destsize)
-		return (srcsize + n);
-	else
+	i = ft_strlen(src);
+	j = ft_strlen(dest);
+	contador = 0;
+	if (dstsize < j)
+		return (i + dstsize);
+	else if (dstsize > 0)
 	{
-		dest = dest + destsize;
-		ft_strlcpy(dest, src, n - destsize);
-		return (srcsize + destsize);
+		while (src[contador] && contador + j < dstsize - 1)
+		{
+			dest[j + contador] = src[contador];
+		contador++;
+		}
 	}
+	dest[j + contador] = '\0';
+	return (i + j);
 }
