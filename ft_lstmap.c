@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 14:12:37 by papereir          #+#    #+#             */
-/*   Updated: 2022/10/12 11:05:30 by papereir         ###   ########.fr       */
+/*   Created: 2022/10/12 11:58:33 by papereir          #+#    #+#             */
+/*   Updated: 2022/10/12 11:58:41 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	character;
+	t_list	*map;
+	t_list	*list;
 
-	str = (unsigned char *)s;
-	character = (unsigned char)c;
-	i = 0;
-	while (i < n)
+	if (!lst || !f)
+		return (NULL);
+	list = ft_lstnew(f(lst->content));
+	if (!list)
+		return (NULL);
+	lst = lst->next;
+	while (lst)
 	{
-		if (*str == character)
+		map = ft_lstnew(f(lst->content));
+		if (!map)
 		{
-			return (str);
+			ft_lstdelone(list, del);
+			return (NULL);
 		}
-		str++;
-		i++;
+		ft_lstadd_back(&list, map);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (list);
 }
