@@ -33,9 +33,21 @@ La biblioteca `libft` contiene una variedad de funciones organizadas en varias c
 Para utilizar la biblioteca `libft` en tu proyecto, simplemente debes incluir el archivo de cabecera `libft.h` en tu código fuente y compilarlo junto con tus archivos.
 
 ```c
+
 #include "libft.h"
 
 int main() {
     ft_putstr("Hola, mundo!\n");
     return 0;
 }
+## Compilación
+
+Puedes compilar tu proyecto junto con la biblioteca `libft` utilizando el compilador GCC (o cualquier otro de tu elección) de la siguiente manera:
+
+```bash
+gcc -o mi_programa mi_programa.c -L. -lft
+
+
+## Ejemplos
+
+El directorio test en este repositorio contiene ejemplos de uso de las funciones de la biblioteca libft. Puedes consultarlos para obtener ejemplos prácticos de cómo utilizar las funciones en tu proyecto.
