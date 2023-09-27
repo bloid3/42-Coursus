@@ -40,14 +40,24 @@ int main() {
     ft_putstr("Hola, mundo!\n");
     return 0;
 }
+
+```
 ## Compilación
 
 Puedes compilar tu proyecto junto con la biblioteca `libft` utilizando el compilador GCC (o cualquier otro de tu elección) de la siguiente manera:
-
-```bash
-gcc -o mi_programa mi_programa.c -L. -lft
-
+gcc -o libft libft.c -L. -lft
 
 ## Ejemplos
 
 El directorio test en este repositorio contiene ejemplos de uso de las funciones de la biblioteca libft. Puedes consultarlos para obtener ejemplos prácticos de cómo utilizar las funciones en tu proyecto.
+
+
+## Contribución
+
+Si deseas contribuir a la biblioteca libft, te invitamos a abrir solicitudes de extracción (pull requests) con tus mejoras o correcciones. Asegúrate de seguir las normas de estilo y buenas prácticas de la escuela 42.
+
+## Autor
+Este proyecto fue desarrollado por Pablo Pereira. Si tienes alguna pregunta o comentario sobre la biblioteca libft, no dudes en ponerte en contacto conmigo.
+
+## Agradecimientos
+Agradecemos a la escuela 42 por proporcionar la oportunidad de aprender y mejorar nuestras habilidades de programación en C mediante este proyecto.
